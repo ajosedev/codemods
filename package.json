@@ -1,19 +1,29 @@
 {
-  "name": "codemods",
-  "version": "1.0.0",
-  "description": "For various helpful codemods.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ajosedev/codemods.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ajosedev/codemods/issues"
-  },
-  "homepage": "https://github.com/ajosedev/codemods#readme"
+    "name": "codemods",
+    "version": "1.0.0",
+    "description": "For various helpful codemods.",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier -w .",
+        "lint": "eslint .",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ajosedev/codemods.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ajosedev/codemods/issues"
+    },
+    "homepage": "https://github.com/ajosedev/codemods#readme",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.43.0",
+        "@typescript-eslint/parser": "^5.43.0",
+        "eslint": "^8.28.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-react": "^7.31.11",
+        "prettier": "^2.7.1"
+    }
 }
