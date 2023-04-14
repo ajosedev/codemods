@@ -24,14 +24,14 @@ export function getPropUsage(
     ].filter((el) => el.getTagNameNode().getText() === componentName);
 
     // Get props
-    const allProps = matchingComponents.flatMap((el) =>
-        el.getDescendantsOfKind(SyntaxKind.JsxAttribute)
-    );
+    const allProps = matchingComponents.flatMap((el) => el.getAttributes());
 
     // Get matching props, and their values
     const matchingProps = allProps.map((prop) => {
-        if (prop.getChildAtIndex(0).getText() === propName) {
-            return prop.getInitializer()!.getText().replace(/"/g, '');
+        if (prop.isKind(SyntaxKind.JsxAttribute)) {
+            if (prop.getName() === propName) {
+                return prop.getInitializer()!.getText().replace(/"/g, '');
+            }
         }
     });
 
